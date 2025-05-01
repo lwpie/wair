@@ -1,3 +1,17 @@
+## TLDR: Steps to reproduce
+
+0. Register an AWS account with the Tokyo (ap-northeast-1) region enabled.
+1. Create a [Gateway Endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html) and (optional) VPC for S3 Express One.
+2. Launch a c7gd.8xlarge instance in AZ1 (ap-northeast-1c) running `Debian 12`.
+3. Install dependencies (apt) `redis`, [`libparquet-dev`](https://arrow.apache.org/install/), (pip) `duckdb`, `redis`, `parse`, `tqdm`, (compile) [DuckDB](https://duckdb.org/docs/stable/dev/building/overview.html) and `g++ split.cc -o split $(pkg-config --cflags --libs parquet) -fopenmp -O3`. 
+4. Configure the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and replace the API keys in `nr/h`.
+5. Generate the `tpch` folder in the `exec` folder using `dbgen.sh`.
+6. Start the pipeline with `zsh pipeline.sh > >(tee logs.txt) 2> >(tee errs.txt)`
+7. Copy `logs.txt` and `errs.txt` into `stats` folder, and run `python3 analyze.py stats` to see results.
+
+If you have any questions or need further information, feel free to ask. I recommend running step 5 on a local server with large memory. The AWS region, availability zone, and other system configurations can be modified according to your preferences if you're familiar with Linux and AWS.
+
+
 This repository contains implementations associated with our academic paper. It is organized as follows:
 
 1. **duckdb**: Modifications to DuckDB.
@@ -23,6 +37,3 @@ Experiments are executed in a pipeline, with queries and reclustering running fr
 ### logs
 
 `logs/33/2` and `logs/33/6` contain the TPC-H W(2) and W(6) results respectively. `analyze.py` provides a quick plain text analysis of specific experiment results. Other Python scripts and `plot.s`h are used to generate the figures in our paper.
-
-
-If you have any questions or need further information, feel free to ask.
