@@ -1,0 +1,17 @@
+.mode trash
+
+CREATE SECRET (
+    TYPE S3,
+    REGION 'ap-northeast-1',
+    KEY_ID '<redacted>',
+    SECRET '<redacted>',
+    ENDPOINT 's3express-apne1-az1.ap-northeast-1.amazonaws.com'
+);
+
+SET enable_progress_bar TO false;
+
+PRAGMA enable_profiling;
+SET enable_profiling TO 'json';
+SET profiling_output TO 'stats.json';
+
+.mode csv

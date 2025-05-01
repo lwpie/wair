@@ -1,0 +1,74 @@
+{
+    "rows_returned": 1,
+    "latency": 16.505795623,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 1926656000,
+    "cumulative_cardinality": 119989039,
+    "extra_info": {},
+    "cpu_time": 142.08963721899997,
+    "blocked_thread_time": 0.0,
+    "query_name": "COPY (FROM read_parquet(['s3://tpch7650--apne1-az1--x-s3/2201.parquet','s3://tpch7650--apne1-az1--x-s3/2202.parquet','s3://tpch7650--apne1-az1--x-s3/2203.parquet','s3://tpch7650--apne1-az1--x-s3/2204.parquet','s3://tpch7650--apne1-az1--x-s3/2205.parquet','s3://tpch7650--apne1-az1--x-s3/2206.parquet','s3://tpch7650--apne1-az1--x-s3/2207.parquet','s3://tpch7650--apne1-az1--x-s3/2208.parquet','s3://tpch7650--apne1-az1--x-s3/2209.parquet','s3://tpch7650--apne1-az1--x-s3/2210.parquet','s3://tpch7650--apne1-az1--x-s3/2211.parquet','s3://tpch7650--apne1-az1--x-s3/2212.parquet','s3://tpch7650--apne1-az1--x-s3/2213.parquet','s3://tpch7650--apne1-az1--x-s3/2214.parquet','s3://tpch7650--apne1-az1--x-s3/2215.parquet','s3://tpch7650--apne1-az1--x-s3/2216.parquet','s3://tpch7650--apne1-az1--x-s3/2217.parquet','s3://tpch7650--apne1-az1--x-s3/2218.parquet','s3://tpch7650--apne1-az1--x-s3/2219.parquet','s3://tpch7650--apne1-az1--x-s3/2220.parquet','s3://tpch7650--apne1-az1--x-s3/2221.parquet','s3://tpch7650--apne1-az1--x-s3/2222.parquet','s3://tpch7650--apne1-az1--x-s3/2223.parquet','s3://tpch7650--apne1-az1--x-s3/2224.parquet','s3://tpch7650--apne1-az1--x-s3/2225.parquet','s3://tpch7650--apne1-az1--x-s3/2226.parquet','s3://tpch7650--apne1-az1--x-s3/2227.parquet','s3://tpch7650--apne1-az1--x-s3/2228.parquet','s3://tpch7650--apne1-az1--x-s3/2229.parquet','s3://tpch7650--apne1-az1--x-s3/2230.parquet','s3://tpch7650--apne1-az1--x-s3/2231.parquet','s3://tpch7650--apne1-az1--x-s3/2232.parquet','s3://tpch7650--apne1-az1--x-s3/2233.parquet','s3://tpch7650--apne1-az1--x-s3/2234.parquet','s3://tpch7650--apne1-az1--x-s3/2235.parquet','s3://tpch7650--apne1-az1--x-s3/2236.parquet','s3://tpch7650--apne1-az1--x-s3/2237.parquet','s3://tpch7650--apne1-az1--x-s3/2238.parquet','s3://tpch7650--apne1-az1--x-s3/2239.parquet','s3://tpch7650--apne1-az1--x-s3/2240.parquet','s3://tpch7650--apne1-az1--x-s3/2241.parquet','s3://tpch7650--apne1-az1--x-s3/2242.parquet','s3://tpch7650--apne1-az1--x-s3/2243.parquet','s3://tpch7650--apne1-az1--x-s3/2244.parquet','s3://tpch7650--apne1-az1--x-s3/2245.parquet','s3://tpch7650--apne1-az1--x-s3/2246.parquet','s3://tpch7650--apne1-az1--x-s3/2247.parquet','s3://tpch7650--apne1-az1--x-s3/2248.parquet','s3://tpch7650--apne1-az1--x-s3/2249.parquet','s3://tpch7650--apne1-az1--x-s3/2250.parquet','s3://tpch7650--apne1-az1--x-s3/2251.parquet','s3://tpch7650--apne1-az1--x-s3/2252.parquet','s3://tpch7650--apne1-az1--x-s3/2253.parquet','s3://tpch7650--apne1-az1--x-s3/2254.parquet','s3://tpch7650--apne1-az1--x-s3/2255.parquet','s3://tpch7650--apne1-az1--x-s3/2256.parquet','s3://tpch7650--apne1-az1--x-s3/2257.parquet','s3://tpch7650--apne1-az1--x-s3/2258.parquet','s3://tpch7650--apne1-az1--x-s3/2259.parquet','s3://tpch7650--apne1-az1--x-s3/2260.parquet','s3://tpch7650--apne1-az1--x-s3/2261.parquet','s3://tpch7650--apne1-az1--x-s3/2262.parquet','s3://tpch7650--apne1-az1--x-s3/2263.parquet','s3://tpch7650--apne1-az1--x-s3/2264.parquet','s3://tpch7650--apne1-az1--x-s3/2265.parquet','s3://tpch7650--apne1-az1--x-s3/2266.parquet','s3://tpch7650--apne1-az1--x-s3/2267.parquet','s3://tpch7650--apne1-az1--x-s3/2268.parquet','s3://tpch7650--apne1-az1--x-s3/2269.parquet','s3://tpch7650--apne1-az1--x-s3/2270.parquet','s3://tpch7650--apne1-az1--x-s3/2271.parquet']) ORDER BY l_shipdate) TO 's3://tpch7650--apne1-az1--x-s3/tmp' (FORMAT 'parquet');",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 18.154078068000004,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 1926656000,
+            "operator_cardinality": 1,
+            "operator_type": "BATCH_COPY_TO_FILE",
+            "cumulative_cardinality": 119989039,
+            "extra_info": {},
+            "cpu_time": 142.08963721899997,
+            "children": [
+                {
+                    "result_set_size": 9359144964,
+                    "operator_timing": 76.07119541099996,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 1926656000,
+                    "operator_cardinality": 59994519,
+                    "operator_type": "ORDER_BY",
+                    "cumulative_cardinality": 119989038,
+                    "extra_info": {
+                        "Order By": "read_parquet.l_shipdate ASC"
+                    },
+                    "cpu_time": 123.93555915099996,
+                    "children": [
+                        {
+                            "result_set_size": 9359144964,
+                            "operator_timing": 47.86436374,
+                            "operator_rows_scanned": 1926656000,
+                            "cumulative_rows_scanned": 1926656000,
+                            "operator_cardinality": 59994519,
+                            "operator_type": "TABLE_SCAN",
+                            "cumulative_cardinality": 59994519,
+                            "extra_info": {
+                                "Function": "READ_PARQUET",
+                                "Projections": [
+                                    "l_orderkey",
+                                    "l_partkey",
+                                    "l_suppkey",
+                                    "l_linenumber",
+                                    "l_quantity",
+                                    "l_extendedprice",
+                                    "l_discount",
+                                    "l_tax",
+                                    "l_returnflag",
+                                    "l_linestatus",
+                                    "l_shipdate",
+                                    "l_commitdate",
+                                    "l_receiptdate",
+                                    "l_shipinstruct",
+                                    "l_shipmode",
+                                    "l_comment"
+                                ],
+                                "Estimated Cardinality": "60208000"
+                            },
+                            "cpu_time": 47.86436374,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

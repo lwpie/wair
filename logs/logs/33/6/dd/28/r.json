@@ -1,0 +1,74 @@
+{
+    "rows_returned": 1,
+    "latency": 32.085714975,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 3442208000,
+    "cumulative_cardinality": 214598975,
+    "extra_info": {},
+    "cpu_time": 300.95969715399974,
+    "blocked_thread_time": 0.0,
+    "query_name": "COPY (FROM read_parquet(['s3://tpch31087--apne1-az1--x-s3/1247.parquet','s3://tpch31087--apne1-az1--x-s3/1249.parquet','s3://tpch31087--apne1-az1--x-s3/1250.parquet','s3://tpch31087--apne1-az1--x-s3/1251.parquet','s3://tpch31087--apne1-az1--x-s3/1252.parquet','s3://tpch31087--apne1-az1--x-s3/1253.parquet','s3://tpch31087--apne1-az1--x-s3/1254.parquet','s3://tpch31087--apne1-az1--x-s3/1255.parquet','s3://tpch31087--apne1-az1--x-s3/1256.parquet','s3://tpch31087--apne1-az1--x-s3/1257.parquet','s3://tpch31087--apne1-az1--x-s3/1258.parquet','s3://tpch31087--apne1-az1--x-s3/1259.parquet','s3://tpch31087--apne1-az1--x-s3/1260.parquet','s3://tpch31087--apne1-az1--x-s3/1261.parquet','s3://tpch31087--apne1-az1--x-s3/1262.parquet','s3://tpch31087--apne1-az1--x-s3/1263.parquet','s3://tpch31087--apne1-az1--x-s3/1264.parquet','s3://tpch31087--apne1-az1--x-s3/1265.parquet','s3://tpch31087--apne1-az1--x-s3/1266.parquet','s3://tpch31087--apne1-az1--x-s3/1267.parquet','s3://tpch31087--apne1-az1--x-s3/1268.parquet','s3://tpch31087--apne1-az1--x-s3/1269.parquet','s3://tpch31087--apne1-az1--x-s3/1270.parquet','s3://tpch31087--apne1-az1--x-s3/1271.parquet','s3://tpch31087--apne1-az1--x-s3/1272.parquet','s3://tpch31087--apne1-az1--x-s3/1273.parquet','s3://tpch31087--apne1-az1--x-s3/1274.parquet','s3://tpch31087--apne1-az1--x-s3/1275.parquet','s3://tpch31087--apne1-az1--x-s3/1276.parquet','s3://tpch31087--apne1-az1--x-s3/1277.parquet','s3://tpch31087--apne1-az1--x-s3/781.parquet','s3://tpch31087--apne1-az1--x-s3/782.parquet','s3://tpch31087--apne1-az1--x-s3/783.parquet','s3://tpch31087--apne1-az1--x-s3/784.parquet','s3://tpch31087--apne1-az1--x-s3/785.parquet','s3://tpch31087--apne1-az1--x-s3/786.parquet','s3://tpch31087--apne1-az1--x-s3/787.parquet','s3://tpch31087--apne1-az1--x-s3/788.parquet','s3://tpch31087--apne1-az1--x-s3/789.parquet','s3://tpch31087--apne1-az1--x-s3/790.parquet','s3://tpch31087--apne1-az1--x-s3/791.parquet','s3://tpch31087--apne1-az1--x-s3/792.parquet','s3://tpch31087--apne1-az1--x-s3/793.parquet','s3://tpch31087--apne1-az1--x-s3/794.parquet','s3://tpch31087--apne1-az1--x-s3/795.parquet','s3://tpch31087--apne1-az1--x-s3/796.parquet','s3://tpch31087--apne1-az1--x-s3/797.parquet','s3://tpch31087--apne1-az1--x-s3/798.parquet','s3://tpch31087--apne1-az1--x-s3/799.parquet','s3://tpch31087--apne1-az1--x-s3/800.parquet','s3://tpch31087--apne1-az1--x-s3/801.parquet','s3://tpch31087--apne1-az1--x-s3/802.parquet','s3://tpch31087--apne1-az1--x-s3/803.parquet','s3://tpch31087--apne1-az1--x-s3/804.parquet','s3://tpch31087--apne1-az1--x-s3/805.parquet','s3://tpch31087--apne1-az1--x-s3/806.parquet','s3://tpch31087--apne1-az1--x-s3/852.parquet','s3://tpch31087--apne1-az1--x-s3/853.parquet','s3://tpch31087--apne1-az1--x-s3/854.parquet','s3://tpch31087--apne1-az1--x-s3/855.parquet','s3://tpch31087--apne1-az1--x-s3/856.parquet','s3://tpch31087--apne1-az1--x-s3/857.parquet','s3://tpch31087--apne1-az1--x-s3/858.parquet','s3://tpch31087--apne1-az1--x-s3/859.parquet','s3://tpch31087--apne1-az1--x-s3/860.parquet','s3://tpch31087--apne1-az1--x-s3/861.parquet','s3://tpch31087--apne1-az1--x-s3/862.parquet','s3://tpch31087--apne1-az1--x-s3/863.parquet','s3://tpch31087--apne1-az1--x-s3/864.parquet','s3://tpch31087--apne1-az1--x-s3/865.parquet','s3://tpch31087--apne1-az1--x-s3/866.parquet','s3://tpch31087--apne1-az1--x-s3/867.parquet','s3://tpch31087--apne1-az1--x-s3/868.parquet','s3://tpch31087--apne1-az1--x-s3/869.parquet','s3://tpch31087--apne1-az1--x-s3/870.parquet','s3://tpch31087--apne1-az1--x-s3/871.parquet','s3://tpch31087--apne1-az1--x-s3/872.parquet','s3://tpch31087--apne1-az1--x-s3/873.parquet','s3://tpch31087--apne1-az1--x-s3/874.parquet','s3://tpch31087--apne1-az1--x-s3/875.parquet','s3://tpch31087--apne1-az1--x-s3/876.parquet','s3://tpch31087--apne1-az1--x-s3/877.parquet','s3://tpch31087--apne1-az1--x-s3/878.parquet','s3://tpch31087--apne1-az1--x-s3/879.parquet','s3://tpch31087--apne1-az1--x-s3/880.parquet','s3://tpch31087--apne1-az1--x-s3/881.parquet','s3://tpch31087--apne1-az1--x-s3/882.parquet','s3://tpch31087--apne1-az1--x-s3/883.parquet','s3://tpch31087--apne1-az1--x-s3/884.parquet','s3://tpch31087--apne1-az1--x-s3/885.parquet','s3://tpch31087--apne1-az1--x-s3/886.parquet','s3://tpch31087--apne1-az1--x-s3/887.parquet','s3://tpch31087--apne1-az1--x-s3/888.parquet','s3://tpch31087--apne1-az1--x-s3/889.parquet','s3://tpch31087--apne1-az1--x-s3/890.parquet','s3://tpch31087--apne1-az1--x-s3/891.parquet','s3://tpch31087--apne1-az1--x-s3/892.parquet','s3://tpch31087--apne1-az1--x-s3/893.parquet','s3://tpch31087--apne1-az1--x-s3/894.parquet','s3://tpch31087--apne1-az1--x-s3/895.parquet','s3://tpch31087--apne1-az1--x-s3/896.parquet','s3://tpch31087--apne1-az1--x-s3/897.parquet','s3://tpch31087--apne1-az1--x-s3/898.parquet','s3://tpch31087--apne1-az1--x-s3/899.parquet','s3://tpch31087--apne1-az1--x-s3/900.parquet','s3://tpch31087--apne1-az1--x-s3/901.parquet','s3://tpch31087--apne1-az1--x-s3/902.parquet','s3://tpch31087--apne1-az1--x-s3/903.parquet','s3://tpch31087--apne1-az1--x-s3/904.parquet','s3://tpch31087--apne1-az1--x-s3/905.parquet','s3://tpch31087--apne1-az1--x-s3/906.parquet','s3://tpch31087--apne1-az1--x-s3/907.parquet','s3://tpch31087--apne1-az1--x-s3/908.parquet','s3://tpch31087--apne1-az1--x-s3/909.parquet','s3://tpch31087--apne1-az1--x-s3/910.parquet','s3://tpch31087--apne1-az1--x-s3/911.parquet','s3://tpch31087--apne1-az1--x-s3/912.parquet','s3://tpch31087--apne1-az1--x-s3/913.parquet','s3://tpch31087--apne1-az1--x-s3/914.parquet','s3://tpch31087--apne1-az1--x-s3/915.parquet','s3://tpch31087--apne1-az1--x-s3/916.parquet','s3://tpch31087--apne1-az1--x-s3/917.parquet','s3://tpch31087--apne1-az1--x-s3/918.parquet','s3://tpch31087--apne1-az1--x-s3/919.parquet','s3://tpch31087--apne1-az1--x-s3/920.parquet','s3://tpch31087--apne1-az1--x-s3/921.parquet','s3://tpch31087--apne1-az1--x-s3/922.parquet']) ORDER BY l_shipdate) TO 's3://tpch31087--apne1-az1--x-s3/tmp' (FORMAT 'parquet');",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 33.35063319899999,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 3442208000,
+            "operator_cardinality": 1,
+            "operator_type": "BATCH_COPY_TO_FILE",
+            "cumulative_cardinality": 214598975,
+            "extra_info": {},
+            "cpu_time": 300.95969715399974,
+            "children": [
+                {
+                    "result_set_size": 16738719972,
+                    "operator_timing": 183.8186499169998,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 3442208000,
+                    "operator_cardinality": 107299487,
+                    "operator_type": "ORDER_BY",
+                    "cumulative_cardinality": 214598974,
+                    "extra_info": {
+                        "Order By": "read_parquet.l_shipdate ASC"
+                    },
+                    "cpu_time": 267.6090639549998,
+                    "children": [
+                        {
+                            "result_set_size": 16738719972,
+                            "operator_timing": 83.79041403799998,
+                            "operator_rows_scanned": 3442208000,
+                            "cumulative_rows_scanned": 3442208000,
+                            "operator_cardinality": 107299487,
+                            "operator_type": "TABLE_SCAN",
+                            "cumulative_cardinality": 107299487,
+                            "extra_info": {
+                                "Function": "READ_PARQUET",
+                                "Projections": [
+                                    "l_orderkey",
+                                    "l_partkey",
+                                    "l_suppkey",
+                                    "l_linenumber",
+                                    "l_quantity",
+                                    "l_extendedprice",
+                                    "l_discount",
+                                    "l_tax",
+                                    "l_returnflag",
+                                    "l_linestatus",
+                                    "l_shipdate",
+                                    "l_commitdate",
+                                    "l_receiptdate",
+                                    "l_shipinstruct",
+                                    "l_shipmode",
+                                    "l_comment"
+                                ],
+                                "Estimated Cardinality": "107569000"
+                            },
+                            "cpu_time": 83.79041403799998,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

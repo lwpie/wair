@@ -1,0 +1,123 @@
+{
+    "rows_returned": 1,
+    "latency": 3.197067182,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 9954304000,
+    "cumulative_cardinality": 212245741,
+    "extra_info": {},
+    "cpu_time": 88.88501135099996,
+    "blocked_thread_time": 0.0,
+    "query_name": "SELECT\n    100.00 * sum(CASE\n            WHEN p_type LIKE 'PROMO%' \n            THEN l_extendedprice * (1 - l_discount)\n            ELSE 0\n    END) / sum(l_extendedprice * (1 - l_discount)) AS promo_revenue\nFROM\n    read_parquet([\"s3://tpch31355--apne1-az1--x-s3/22.parquet\", \"s3://tpch31355--apne1-az1--x-s3/23.parquet\", \"s3://tpch31355--apne1-az1--x-s3/24.parquet\", \"s3://tpch31355--apne1-az1--x-s3/142.parquet\", \"s3://tpch31355--apne1-az1--x-s3/207.parquet\", \"s3://tpch31355--apne1-az1--x-s3/208.parquet\", \"s3://tpch31355--apne1-az1--x-s3/209.parquet\", \"s3://tpch31355--apne1-az1--x-s3/210.parquet\", \"s3://tpch31355--apne1-az1--x-s3/324.parquet\", \"s3://tpch31355--apne1-az1--x-s3/325.parquet\", \"s3://tpch31355--apne1-az1--x-s3/326.parquet\", \"s3://tpch31355--apne1-az1--x-s3/327.parquet\", \"s3://tpch31355--apne1-az1--x-s3/328.parquet\", \"s3://tpch31355--apne1-az1--x-s3/329.parquet\", \"s3://tpch31355--apne1-az1--x-s3/330.parquet\", \"s3://tpch31355--apne1-az1--x-s3/483.parquet\", \"s3://tpch31355--apne1-az1--x-s3/484.parquet\", \"s3://tpch31355--apne1-az1--x-s3/485.parquet\", \"s3://tpch31355--apne1-az1--x-s3/486.parquet\", \"s3://tpch31355--apne1-az1--x-s3/487.parquet\", \"s3://tpch31355--apne1-az1--x-s3/488.parquet\", \"s3://tpch31355--apne1-az1--x-s3/489.parquet\", \"s3://tpch31355--apne1-az1--x-s3/490.parquet\", \"s3://tpch31355--apne1-az1--x-s3/669.parquet\", \"s3://tpch31355--apne1-az1--x-s3/670.parquet\", \"s3://tpch31355--apne1-az1--x-s3/671.parquet\", \"s3://tpch31355--apne1-az1--x-s3/672.parquet\", \"s3://tpch31355--apne1-az1--x-s3/673.parquet\", \"s3://tpch31355--apne1-az1--x-s3/674.parquet\", \"s3://tpch31355--apne1-az1--x-s3/675.parquet\", \"s3://tpch31355--apne1-az1--x-s3/833.parquet\", \"s3://tpch31355--apne1-az1--x-s3/834.parquet\", \"s3://tpch31355--apne1-az1--x-s3/835.parquet\", \"s3://tpch31355--apne1-az1--x-s3/836.parquet\", \"s3://tpch31355--apne1-az1--x-s3/837.parquet\", \"s3://tpch31355--apne1-az1--x-s3/841.parquet\", \"s3://tpch31355--apne1-az1--x-s3/845.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1143.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1144.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1145.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1146.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1147.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1148.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1149.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1256.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1257.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1258.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1259.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1260.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1261.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1262.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1414.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1415.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1416.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1417.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1418.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1420.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1663.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1664.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1665.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1666.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1733.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1734.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1735.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1774.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1775.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1776.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1777.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1778.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1779.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1780.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1781.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1782.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1783.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1784.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1785.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1786.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1787.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1788.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1789.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1790.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1791.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1792.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1793.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1794.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1795.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1796.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1797.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1798.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1799.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1800.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1801.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1802.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1803.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1804.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1805.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1806.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1807.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1808.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1809.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1810.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1811.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1812.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1813.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1814.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1815.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1816.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1817.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1818.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1819.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1820.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1821.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1822.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1823.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1824.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1825.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1826.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1827.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1828.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1829.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1830.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1831.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1832.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1833.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1834.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1835.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1836.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1837.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1838.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1839.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1840.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1841.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1842.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1843.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1844.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1845.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1846.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1847.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1848.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1849.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1850.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1851.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1852.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1853.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1854.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1855.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1856.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1857.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1858.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1859.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1860.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1861.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1862.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1863.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1864.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1865.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1866.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1867.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1868.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1869.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1870.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1871.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1872.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1873.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1874.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1875.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1876.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1877.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1878.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1879.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1880.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1881.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1882.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1883.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1884.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1885.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1886.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1887.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1888.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1889.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1890.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1891.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1892.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1893.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1894.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1895.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1896.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1897.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1898.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1899.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1900.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1901.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1902.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1903.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1904.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1905.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1906.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1907.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1908.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1909.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1910.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1911.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1912.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1913.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1914.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1915.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1916.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1917.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1918.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1919.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1920.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1921.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1922.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1923.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1924.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1925.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1926.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1927.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1928.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1929.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1930.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1931.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1932.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1933.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1934.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1935.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1936.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1937.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1938.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1939.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1940.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1941.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1942.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1943.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1944.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1945.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1946.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1947.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1948.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1949.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1950.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1951.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1952.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1953.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1954.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1955.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1956.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1957.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1958.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1959.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1960.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1961.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1962.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1963.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1964.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1965.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1966.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1967.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1968.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1969.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1970.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1971.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1972.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1973.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1974.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1975.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1976.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1977.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1978.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1979.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1980.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1981.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1982.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1983.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1984.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1985.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1986.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1987.parquet\"]),\n    'pool/part/*.parquet'\nWHERE\n    l_partkey = p_partkey\n    AND l_shipdate >= DATE '1992-01-01' + INTERVAL 27 MONTH\n    AND l_shipdate < DATE '1992-02-01' + INTERVAL 27 MONTH;",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 0.000021209,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 9954304000,
+            "operator_cardinality": 1,
+            "operator_type": "PROJECTION",
+            "cumulative_cardinality": 212245741,
+            "extra_info": {
+                "Projections": "promo_revenue",
+                "Estimated Cardinality": "1"
+            },
+            "cpu_time": 88.88501135099996,
+            "children": [
+                {
+                    "result_set_size": 32,
+                    "operator_timing": 0.12511484900000006,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 9954304000,
+                    "operator_cardinality": 1,
+                    "operator_type": "UNGROUPED_AGGREGATE",
+                    "cumulative_cardinality": 212245740,
+                    "extra_info": {
+                        "Aggregates": [
+                            "sum(#0)",
+                            "sum(#1)"
+                        ]
+                    },
+                    "cpu_time": 88.88499014199996,
+                    "children": [
+                        {
+                            "result_set_size": 647295008,
+                            "operator_timing": 0.9778277669999995,
+                            "operator_rows_scanned": 0,
+                            "cumulative_rows_scanned": 9954304000,
+                            "operator_cardinality": 40455938,
+                            "operator_type": "PROJECTION",
+                            "cumulative_cardinality": 212245739,
+                            "extra_info": {
+                                "Projections": [
+                                    "CASE  WHEN (prefix(p_type, 'PROMO')) THEN ((l_extendedprice * (1.00 - l_discount))) ELSE 0.0000 END",
+                                    "(l_extendedprice * (1.00 - l_discount))"
+                                ],
+                                "Estimated Cardinality": "45814400"
+                            },
+                            "cpu_time": 88.75987529299996,
+                            "children": [
+                                {
+                                    "result_set_size": 1941885024,
+                                    "operator_timing": 9.69293265499997,
+                                    "operator_rows_scanned": 0,
+                                    "cumulative_rows_scanned": 9954304000,
+                                    "operator_cardinality": 40455938,
+                                    "operator_type": "HASH_JOIN",
+                                    "cumulative_cardinality": 171789801,
+                                    "extra_info": {
+                                        "Join Type": "INNER",
+                                        "Conditions": "p_partkey = l_partkey",
+                                        "Estimated Cardinality": "45814400"
+                                    },
+                                    "cpu_time": 87.78204752599997,
+                                    "children": [
+                                        {
+                                            "result_set_size": 1967999880,
+                                            "operator_timing": 2.3072936880000006,
+                                            "operator_rows_scanned": 2624000000,
+                                            "cumulative_rows_scanned": 2624000000,
+                                            "operator_cardinality": 81999995,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 81999995,
+                                            "extra_info": {
+                                                "Function": "PARQUET_SCAN",
+                                                "Projections": [
+                                                    "p_partkey",
+                                                    "p_type"
+                                                ],
+                                                "Estimated Cardinality": "82000000"
+                                            },
+                                            "cpu_time": 2.3072936880000006,
+                                            "children": []
+                                        },
+                                        {
+                                            "result_set_size": 1184012832,
+                                            "operator_timing": 75.781821183,
+                                            "operator_rows_scanned": 7330304000,
+                                            "cumulative_rows_scanned": 7330304000,
+                                            "operator_cardinality": 49333868,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 49333868,
+                                            "extra_info": {
+                                                "Function": "READ_PARQUET",
+                                                "Projections": [
+                                                    "l_partkey",
+                                                    "l_extendedprice",
+                                                    "l_discount"
+                                                ],
+                                                "Filters": "l_shipdate>='1994-04-01'::DATE AND l_shipdate<'1994-05-01'::DATE AND l_shipdate IS NOT NULL",
+                                                "Estimated Cardinality": "45814400"
+                                            },
+                                            "cpu_time": 75.781821183,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

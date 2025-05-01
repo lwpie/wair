@@ -1,0 +1,123 @@
+{
+    "rows_returned": 1,
+    "latency": 0.892694626,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 3952704000,
+    "cumulative_cardinality": 174567144,
+    "extra_info": {},
+    "cpu_time": 20.09467179500001,
+    "blocked_thread_time": 0.0,
+    "query_name": "SELECT\n    100.00 * sum(CASE\n            WHEN p_type LIKE 'PROMO%' \n            THEN l_extendedprice * (1 - l_discount)\n            ELSE 0\n    END) / sum(l_extendedprice * (1 - l_discount)) AS promo_revenue\nFROM\n    read_parquet([\"s3://tpch3934--apne1-az1--x-s3/213.parquet\", \"s3://tpch3934--apne1-az1--x-s3/214.parquet\", \"s3://tpch3934--apne1-az1--x-s3/215.parquet\", \"s3://tpch3934--apne1-az1--x-s3/216.parquet\", \"s3://tpch3934--apne1-az1--x-s3/217.parquet\", \"s3://tpch3934--apne1-az1--x-s3/218.parquet\", \"s3://tpch3934--apne1-az1--x-s3/219.parquet\", \"s3://tpch3934--apne1-az1--x-s3/220.parquet\", \"s3://tpch3934--apne1-az1--x-s3/221.parquet\", \"s3://tpch3934--apne1-az1--x-s3/222.parquet\", \"s3://tpch3934--apne1-az1--x-s3/223.parquet\", \"s3://tpch3934--apne1-az1--x-s3/224.parquet\", \"s3://tpch3934--apne1-az1--x-s3/225.parquet\", \"s3://tpch3934--apne1-az1--x-s3/226.parquet\", \"s3://tpch3934--apne1-az1--x-s3/227.parquet\", \"s3://tpch3934--apne1-az1--x-s3/228.parquet\", \"s3://tpch3934--apne1-az1--x-s3/229.parquet\", \"s3://tpch3934--apne1-az1--x-s3/230.parquet\", \"s3://tpch3934--apne1-az1--x-s3/231.parquet\", \"s3://tpch3934--apne1-az1--x-s3/232.parquet\", \"s3://tpch3934--apne1-az1--x-s3/233.parquet\", \"s3://tpch3934--apne1-az1--x-s3/234.parquet\", \"s3://tpch3934--apne1-az1--x-s3/235.parquet\", \"s3://tpch3934--apne1-az1--x-s3/236.parquet\", \"s3://tpch3934--apne1-az1--x-s3/237.parquet\", \"s3://tpch3934--apne1-az1--x-s3/238.parquet\", \"s3://tpch3934--apne1-az1--x-s3/239.parquet\", \"s3://tpch3934--apne1-az1--x-s3/240.parquet\", \"s3://tpch3934--apne1-az1--x-s3/241.parquet\", \"s3://tpch3934--apne1-az1--x-s3/242.parquet\", \"s3://tpch3934--apne1-az1--x-s3/243.parquet\", \"s3://tpch3934--apne1-az1--x-s3/244.parquet\", \"s3://tpch3934--apne1-az1--x-s3/245.parquet\"]),\n    'pool/part/*.parquet'\nWHERE\n    l_partkey = p_partkey\n    AND l_shipdate >= DATE '1992-01-01' + INTERVAL 14 MONTH\n    AND l_shipdate < DATE '1992-02-01' + INTERVAL 14 MONTH;",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 0.000628268,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 3952704000,
+            "operator_cardinality": 1,
+            "operator_type": "PROJECTION",
+            "cumulative_cardinality": 174567144,
+            "extra_info": {
+                "Projections": "promo_revenue",
+                "Estimated Cardinality": "1"
+            },
+            "cpu_time": 20.09467179500001,
+            "children": [
+                {
+                    "result_set_size": 32,
+                    "operator_timing": 0.08752628900000002,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 3952704000,
+                    "operator_cardinality": 1,
+                    "operator_type": "UNGROUPED_AGGREGATE",
+                    "cumulative_cardinality": 174567143,
+                    "extra_info": {
+                        "Aggregates": [
+                            "sum(#0)",
+                            "sum(#1)"
+                        ]
+                    },
+                    "cpu_time": 20.09404352700001,
+                    "children": [
+                        {
+                            "result_set_size": 413282672,
+                            "operator_timing": 0.675531,
+                            "operator_rows_scanned": 0,
+                            "cumulative_rows_scanned": 3952704000,
+                            "operator_cardinality": 25830167,
+                            "operator_type": "PROJECTION",
+                            "cumulative_cardinality": 174567142,
+                            "extra_info": {
+                                "Projections": [
+                                    "CASE  WHEN (prefix(p_type, 'PROMO')) THEN ((l_extendedprice * (1.00 - l_discount))) ELSE 0.0000 END",
+                                    "(l_extendedprice * (1.00 - l_discount))"
+                                ],
+                                "Estimated Cardinality": "19200000"
+                            },
+                            "cpu_time": 20.00651723800001,
+                            "children": [
+                                {
+                                    "result_set_size": 1239848016,
+                                    "operator_timing": 6.905281973000012,
+                                    "operator_rows_scanned": 0,
+                                    "cumulative_rows_scanned": 3952704000,
+                                    "operator_cardinality": 25830167,
+                                    "operator_type": "HASH_JOIN",
+                                    "cumulative_cardinality": 148736975,
+                                    "extra_info": {
+                                        "Join Type": "INNER",
+                                        "Conditions": "p_partkey = l_partkey",
+                                        "Estimated Cardinality": "19200000"
+                                    },
+                                    "cpu_time": 19.330986238000012,
+                                    "children": [
+                                        {
+                                            "result_set_size": 2303999976,
+                                            "operator_timing": 4.672036373,
+                                            "operator_rows_scanned": 3072000000,
+                                            "cumulative_rows_scanned": 3072000000,
+                                            "operator_cardinality": 95999999,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 95999999,
+                                            "extra_info": {
+                                                "Function": "PARQUET_SCAN",
+                                                "Projections": [
+                                                    "p_partkey",
+                                                    "p_type"
+                                                ],
+                                                "Estimated Cardinality": "96000000"
+                                            },
+                                            "cpu_time": 4.672036373,
+                                            "children": []
+                                        },
+                                        {
+                                            "result_set_size": 645763416,
+                                            "operator_timing": 7.753667892,
+                                            "operator_rows_scanned": 880704000,
+                                            "cumulative_rows_scanned": 880704000,
+                                            "operator_cardinality": 26906809,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 26906809,
+                                            "extra_info": {
+                                                "Function": "READ_PARQUET",
+                                                "Projections": [
+                                                    "l_partkey",
+                                                    "l_extendedprice",
+                                                    "l_discount"
+                                                ],
+                                                "Filters": "l_shipdate>='1993-03-01'::DATE AND l_shipdate<'1993-04-01'::DATE AND l_shipdate IS NOT NULL",
+                                                "Estimated Cardinality": "5504400"
+                                            },
+                                            "cpu_time": 7.753667892,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

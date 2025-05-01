@@ -1,0 +1,74 @@
+{
+    "rows_returned": 1,
+    "latency": 5.072616938,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 580096000,
+    "cumulative_cardinality": 35968001,
+    "extra_info": {},
+    "cpu_time": 25.497934268999998,
+    "blocked_thread_time": 0.0,
+    "query_name": "COPY (FROM read_parquet(['s3://tpch10289--apne1-az1--x-s3/1023.parquet','s3://tpch10289--apne1-az1--x-s3/1723.parquet','s3://tpch10289--apne1-az1--x-s3/1726.parquet','s3://tpch10289--apne1-az1--x-s3/1727.parquet','s3://tpch10289--apne1-az1--x-s3/1728.parquet','s3://tpch10289--apne1-az1--x-s3/1729.parquet','s3://tpch10289--apne1-az1--x-s3/1774.parquet','s3://tpch10289--apne1-az1--x-s3/1988.parquet','s3://tpch10289--apne1-az1--x-s3/1989.parquet','s3://tpch10289--apne1-az1--x-s3/1990.parquet','s3://tpch10289--apne1-az1--x-s3/1991.parquet','s3://tpch10289--apne1-az1--x-s3/1992.parquet','s3://tpch10289--apne1-az1--x-s3/1993.parquet','s3://tpch10289--apne1-az1--x-s3/1994.parquet','s3://tpch10289--apne1-az1--x-s3/1995.parquet','s3://tpch10289--apne1-az1--x-s3/1996.parquet','s3://tpch10289--apne1-az1--x-s3/233.parquet','s3://tpch10289--apne1-az1--x-s3/378.parquet','s3://tpch10289--apne1-az1--x-s3/402.parquet','s3://tpch10289--apne1-az1--x-s3/421.parquet','s3://tpch10289--apne1-az1--x-s3/523.parquet','s3://tpch10289--apne1-az1--x-s3/650.parquet']) ORDER BY l_shipdate) TO 's3://tpch10289--apne1-az1--x-s3/tmp' (FORMAT 'parquet');",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 1.5984590450000005,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 580096000,
+            "operator_cardinality": 1,
+            "operator_type": "BATCH_COPY_TO_FILE",
+            "cumulative_cardinality": 35968001,
+            "extra_info": {},
+            "cpu_time": 25.497934268999998,
+            "children": [
+                {
+                    "result_set_size": 2805504000,
+                    "operator_timing": 12.077644642999996,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 580096000,
+                    "operator_cardinality": 17984000,
+                    "operator_type": "ORDER_BY",
+                    "cumulative_cardinality": 35968000,
+                    "extra_info": {
+                        "Order By": "read_parquet.l_shipdate ASC"
+                    },
+                    "cpu_time": 23.899475223999996,
+                    "children": [
+                        {
+                            "result_set_size": 2805504000,
+                            "operator_timing": 11.821830581,
+                            "operator_rows_scanned": 580096000,
+                            "cumulative_rows_scanned": 580096000,
+                            "operator_cardinality": 17984000,
+                            "operator_type": "TABLE_SCAN",
+                            "cumulative_cardinality": 17984000,
+                            "extra_info": {
+                                "Function": "READ_PARQUET",
+                                "Projections": [
+                                    "l_orderkey",
+                                    "l_partkey",
+                                    "l_suppkey",
+                                    "l_linenumber",
+                                    "l_quantity",
+                                    "l_extendedprice",
+                                    "l_discount",
+                                    "l_tax",
+                                    "l_returnflag",
+                                    "l_linestatus",
+                                    "l_shipdate",
+                                    "l_commitdate",
+                                    "l_receiptdate",
+                                    "l_shipinstruct",
+                                    "l_shipmode",
+                                    "l_comment"
+                                ],
+                                "Estimated Cardinality": "18128000"
+                            },
+                            "cpu_time": 11.821830581,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

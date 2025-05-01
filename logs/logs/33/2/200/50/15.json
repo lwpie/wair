@@ -1,0 +1,287 @@
+{
+    "rows_returned": 1,
+    "latency": 2.526571232,
+    "result_set_size": 72,
+    "cumulative_rows_scanned": 5090816000,
+    "cumulative_cardinality": 302278099,
+    "extra_info": {},
+    "cpu_time": 70.62273478999998,
+    "blocked_thread_time": 0.0,
+    "query_name": "WITH revenue AS (\n    SELECT\n        l_suppkey AS supplier_no,\n        sum(l_extendedprice * (1 - l_discount)) AS total_revenue\n    FROM\n        read_parquet([\"s3://tpch31355--apne1-az1--x-s3/2.parquet\", \"s3://tpch31355--apne1-az1--x-s3/19.parquet\", \"s3://tpch31355--apne1-az1--x-s3/20.parquet\", \"s3://tpch31355--apne1-az1--x-s3/22.parquet\", \"s3://tpch31355--apne1-az1--x-s3/23.parquet\", \"s3://tpch31355--apne1-az1--x-s3/24.parquet\", \"s3://tpch31355--apne1-az1--x-s3/142.parquet\", \"s3://tpch31355--apne1-az1--x-s3/194.parquet\", \"s3://tpch31355--apne1-az1--x-s3/196.parquet\", \"s3://tpch31355--apne1-az1--x-s3/197.parquet\", \"s3://tpch31355--apne1-az1--x-s3/199.parquet\", \"s3://tpch31355--apne1-az1--x-s3/200.parquet\", \"s3://tpch31355--apne1-az1--x-s3/202.parquet\", \"s3://tpch31355--apne1-az1--x-s3/203.parquet\", \"s3://tpch31355--apne1-az1--x-s3/205.parquet\", \"s3://tpch31355--apne1-az1--x-s3/206.parquet\", \"s3://tpch31355--apne1-az1--x-s3/207.parquet\", \"s3://tpch31355--apne1-az1--x-s3/208.parquet\", \"s3://tpch31355--apne1-az1--x-s3/209.parquet\", \"s3://tpch31355--apne1-az1--x-s3/210.parquet\", \"s3://tpch31355--apne1-az1--x-s3/295.parquet\", \"s3://tpch31355--apne1-az1--x-s3/297.parquet\", \"s3://tpch31355--apne1-az1--x-s3/298.parquet\", \"s3://tpch31355--apne1-az1--x-s3/311.parquet\", \"s3://tpch31355--apne1-az1--x-s3/312.parquet\", \"s3://tpch31355--apne1-az1--x-s3/313.parquet\", \"s3://tpch31355--apne1-az1--x-s3/314.parquet\", \"s3://tpch31355--apne1-az1--x-s3/315.parquet\", \"s3://tpch31355--apne1-az1--x-s3/316.parquet\", \"s3://tpch31355--apne1-az1--x-s3/317.parquet\", \"s3://tpch31355--apne1-az1--x-s3/318.parquet\", \"s3://tpch31355--apne1-az1--x-s3/319.parquet\", \"s3://tpch31355--apne1-az1--x-s3/320.parquet\", \"s3://tpch31355--apne1-az1--x-s3/321.parquet\", \"s3://tpch31355--apne1-az1--x-s3/322.parquet\", \"s3://tpch31355--apne1-az1--x-s3/323.parquet\", \"s3://tpch31355--apne1-az1--x-s3/324.parquet\", \"s3://tpch31355--apne1-az1--x-s3/325.parquet\", \"s3://tpch31355--apne1-az1--x-s3/326.parquet\", \"s3://tpch31355--apne1-az1--x-s3/327.parquet\", \"s3://tpch31355--apne1-az1--x-s3/328.parquet\", \"s3://tpch31355--apne1-az1--x-s3/329.parquet\", \"s3://tpch31355--apne1-az1--x-s3/330.parquet\", \"s3://tpch31355--apne1-az1--x-s3/390.parquet\", \"s3://tpch31355--apne1-az1--x-s3/395.parquet\", \"s3://tpch31355--apne1-az1--x-s3/471.parquet\", \"s3://tpch31355--apne1-az1--x-s3/472.parquet\", \"s3://tpch31355--apne1-az1--x-s3/473.parquet\", \"s3://tpch31355--apne1-az1--x-s3/474.parquet\", \"s3://tpch31355--apne1-az1--x-s3/475.parquet\", \"s3://tpch31355--apne1-az1--x-s3/476.parquet\", \"s3://tpch31355--apne1-az1--x-s3/477.parquet\", \"s3://tpch31355--apne1-az1--x-s3/478.parquet\", \"s3://tpch31355--apne1-az1--x-s3/479.parquet\", \"s3://tpch31355--apne1-az1--x-s3/480.parquet\", \"s3://tpch31355--apne1-az1--x-s3/481.parquet\", \"s3://tpch31355--apne1-az1--x-s3/482.parquet\", \"s3://tpch31355--apne1-az1--x-s3/484.parquet\", \"s3://tpch31355--apne1-az1--x-s3/485.parquet\", \"s3://tpch31355--apne1-az1--x-s3/486.parquet\", \"s3://tpch31355--apne1-az1--x-s3/487.parquet\", \"s3://tpch31355--apne1-az1--x-s3/488.parquet\", \"s3://tpch31355--apne1-az1--x-s3/489.parquet\", \"s3://tpch31355--apne1-az1--x-s3/613.parquet\", \"s3://tpch31355--apne1-az1--x-s3/615.parquet\", \"s3://tpch31355--apne1-az1--x-s3/616.parquet\", \"s3://tpch31355--apne1-az1--x-s3/656.parquet\", \"s3://tpch31355--apne1-az1--x-s3/657.parquet\", \"s3://tpch31355--apne1-az1--x-s3/658.parquet\", \"s3://tpch31355--apne1-az1--x-s3/659.parquet\", \"s3://tpch31355--apne1-az1--x-s3/660.parquet\", \"s3://tpch31355--apne1-az1--x-s3/661.parquet\", \"s3://tpch31355--apne1-az1--x-s3/662.parquet\", \"s3://tpch31355--apne1-az1--x-s3/663.parquet\", \"s3://tpch31355--apne1-az1--x-s3/664.parquet\", \"s3://tpch31355--apne1-az1--x-s3/665.parquet\", \"s3://tpch31355--apne1-az1--x-s3/666.parquet\", \"s3://tpch31355--apne1-az1--x-s3/667.parquet\", \"s3://tpch31355--apne1-az1--x-s3/668.parquet\", \"s3://tpch31355--apne1-az1--x-s3/669.parquet\", \"s3://tpch31355--apne1-az1--x-s3/670.parquet\", \"s3://tpch31355--apne1-az1--x-s3/671.parquet\", \"s3://tpch31355--apne1-az1--x-s3/672.parquet\", \"s3://tpch31355--apne1-az1--x-s3/673.parquet\", \"s3://tpch31355--apne1-az1--x-s3/674.parquet\", \"s3://tpch31355--apne1-az1--x-s3/675.parquet\", \"s3://tpch31355--apne1-az1--x-s3/749.parquet\", \"s3://tpch31355--apne1-az1--x-s3/811.parquet\", \"s3://tpch31355--apne1-az1--x-s3/813.parquet\", \"s3://tpch31355--apne1-az1--x-s3/814.parquet\", \"s3://tpch31355--apne1-az1--x-s3/817.parquet\", \"s3://tpch31355--apne1-az1--x-s3/818.parquet\", \"s3://tpch31355--apne1-az1--x-s3/822.parquet\", \"s3://tpch31355--apne1-az1--x-s3/823.parquet\", \"s3://tpch31355--apne1-az1--x-s3/826.parquet\", \"s3://tpch31355--apne1-az1--x-s3/827.parquet\", \"s3://tpch31355--apne1-az1--x-s3/829.parquet\", \"s3://tpch31355--apne1-az1--x-s3/831.parquet\", \"s3://tpch31355--apne1-az1--x-s3/832.parquet\", \"s3://tpch31355--apne1-az1--x-s3/833.parquet\", \"s3://tpch31355--apne1-az1--x-s3/834.parquet\", \"s3://tpch31355--apne1-az1--x-s3/835.parquet\", \"s3://tpch31355--apne1-az1--x-s3/836.parquet\", \"s3://tpch31355--apne1-az1--x-s3/837.parquet\", \"s3://tpch31355--apne1-az1--x-s3/841.parquet\", \"s3://tpch31355--apne1-az1--x-s3/845.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1130.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1131.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1132.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1133.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1134.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1136.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1137.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1138.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1139.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1140.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1141.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1142.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1143.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1144.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1145.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1146.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1147.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1148.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1149.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1244.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1245.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1246.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1247.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1248.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1249.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1250.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1251.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1252.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1253.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1254.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1255.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1256.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1257.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1258.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1259.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1260.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1261.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1262.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1401.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1402.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1403.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1404.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1406.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1408.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1409.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1410.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1411.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1412.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1413.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1414.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1415.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1416.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1417.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1418.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1420.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1656.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1657.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1658.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1660.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1661.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1662.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1663.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1664.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1665.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1666.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1729.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1730.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1731.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1732.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1733.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1734.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1776.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1777.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1778.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1779.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1780.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1781.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1782.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1783.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1784.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1785.parquet\"])\n    WHERE\n        l_shipdate >= DATE '1992-01-01' + INTERVAL 25 MONTH\n        AND l_shipdate < DATE '1992-01-01' + INTERVAL 25 MONTH + INTERVAL 3 MONTH\n    GROUP BY\n        supplier_no\n)\nSELECT\n    s_suppkey,\n    s_name,\n    s_address,\n    s_phone,\n    total_revenue\nFROM\n    'pool/supplier/*.parquet',\n    revenue\nWHERE\n    s_suppkey = supplier_no\n    AND total_revenue = (\n        SELECT\n            max(total_revenue)\n        FROM\n            revenue\n    )\nORDER BY\n    s_suppkey;",
+    "children": [
+        {
+            "result_set_size": 72,
+            "operator_timing": 0.000030123000000000003,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 5090816000,
+            "operator_cardinality": 1,
+            "operator_type": "ORDER_BY",
+            "cumulative_cardinality": 302278099,
+            "extra_info": {
+                "Order By": "\"pool/supplier/*.parquet\".s_suppkey ASC"
+            },
+            "cpu_time": 70.62273478999998,
+            "children": [
+                {
+                    "result_set_size": 72,
+                    "operator_timing": 0.000001013,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 5090816000,
+                    "operator_cardinality": 1,
+                    "operator_type": "PROJECTION",
+                    "cumulative_cardinality": 302278098,
+                    "extra_info": {
+                        "Projections": [
+                            "s_suppkey",
+                            "s_name",
+                            "s_address",
+                            "s_phone",
+                            "total_revenue"
+                        ],
+                        "Estimated Cardinality": "15408800"
+                    },
+                    "cpu_time": 70.62270466699998,
+                    "children": [
+                        {
+                            "result_set_size": 0,
+                            "operator_timing": 0.014199424999999996,
+                            "operator_rows_scanned": 0,
+                            "cumulative_rows_scanned": 5090816000,
+                            "operator_cardinality": 0,
+                            "operator_type": "CTE",
+                            "cumulative_cardinality": 302278097,
+                            "extra_info": {
+                                "CTE Name": "revenue",
+                                "Table Index": "0"
+                            },
+                            "cpu_time": 70.62270365399998,
+                            "children": [
+                                {
+                                    "result_set_size": 120000000,
+                                    "operator_timing": 22.836954888,
+                                    "operator_rows_scanned": 0,
+                                    "cumulative_rows_scanned": 4930816000,
+                                    "operator_cardinality": 5000000,
+                                    "operator_type": "HASH_GROUP_BY",
+                                    "cumulative_cardinality": 287278090,
+                                    "extra_info": {
+                                        "Groups": "#0",
+                                        "Aggregates": "sum(#1)",
+                                        "Estimated Cardinality": "15408800"
+                                    },
+                                    "cpu_time": 70.50135255299998,
+                                    "children": [
+                                        {
+                                            "result_set_size": 2258224720,
+                                            "operator_timing": 0.863597522,
+                                            "operator_rows_scanned": 0,
+                                            "cumulative_rows_scanned": 4930816000,
+                                            "operator_cardinality": 141139045,
+                                            "operator_type": "PROJECTION",
+                                            "cumulative_cardinality": 282278090,
+                                            "extra_info": {
+                                                "Projections": [
+                                                    "supplier_no",
+                                                    "(l_extendedprice * (1.00 - l_discount))"
+                                                ],
+                                                "Estimated Cardinality": "30817600"
+                                            },
+                                            "cpu_time": 47.66439766499998,
+                                            "children": [
+                                                {
+                                                    "result_set_size": 3387337080,
+                                                    "operator_timing": 46.80080014299998,
+                                                    "operator_rows_scanned": 4930816000,
+                                                    "cumulative_rows_scanned": 4930816000,
+                                                    "operator_cardinality": 141139045,
+                                                    "operator_type": "TABLE_SCAN",
+                                                    "cumulative_cardinality": 141139045,
+                                                    "extra_info": {
+                                                        "Function": "READ_PARQUET",
+                                                        "Projections": [
+                                                            "l_suppkey",
+                                                            "l_extendedprice",
+                                                            "l_discount"
+                                                        ],
+                                                        "Filters": "l_shipdate>='1994-02-01'::DATE AND l_shipdate<'1994-05-01'::DATE AND l_shipdate IS NOT NULL",
+                                                        "Estimated Cardinality": "30817600"
+                                                    },
+                                                    "cpu_time": 46.80080014299998,
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "result_set_size": 96,
+                                    "operator_timing": 0.000193763,
+                                    "operator_rows_scanned": 0,
+                                    "cumulative_rows_scanned": 160000000,
+                                    "operator_cardinality": 1,
+                                    "operator_type": "HASH_JOIN",
+                                    "cumulative_cardinality": 15000007,
+                                    "extra_info": {
+                                        "Join Type": "INNER",
+                                        "Conditions": "s_suppkey = supplier_no",
+                                        "Estimated Cardinality": "0"
+                                    },
+                                    "cpu_time": 0.107151676,
+                                    "children": [
+                                        {
+                                            "result_set_size": 56,
+                                            "operator_timing": 0.035220368999999994,
+                                            "operator_rows_scanned": 160000000,
+                                            "cumulative_rows_scanned": 160000000,
+                                            "operator_cardinality": 1,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 1,
+                                            "extra_info": {
+                                                "Function": "PARQUET_SCAN",
+                                                "Projections": "",
+                                                "Estimated Cardinality": "5000000"
+                                            },
+                                            "cpu_time": 0.035220368999999994,
+                                            "children": []
+                                        },
+                                        {
+                                            "result_set_size": 40,
+                                            "operator_timing": 0.028204837000000003,
+                                            "operator_rows_scanned": 0,
+                                            "cumulative_rows_scanned": 0,
+                                            "operator_cardinality": 1,
+                                            "operator_type": "HASH_JOIN",
+                                            "cumulative_cardinality": 15000005,
+                                            "extra_info": {
+                                                "Join Type": "INNER",
+                                                "Conditions": "total_revenue = SUBQUERY",
+                                                "Estimated Cardinality": "0"
+                                            },
+                                            "cpu_time": 0.071737544,
+                                            "children": [
+                                                {
+                                                    "result_set_size": 120000000,
+                                                    "operator_timing": 0.009110184,
+                                                    "operator_rows_scanned": 0,
+                                                    "cumulative_rows_scanned": 0,
+                                                    "operator_cardinality": 5000000,
+                                                    "operator_type": "CTE_SCAN",
+                                                    "cumulative_cardinality": 5000000,
+                                                    "extra_info": {
+                                                        "CTE Index": "0",
+                                                        "Estimated Cardinality": "15408800"
+                                                    },
+                                                    "cpu_time": 0.009110184,
+                                                    "children": []
+                                                },
+                                                {
+                                                    "result_set_size": 16,
+                                                    "operator_timing": 0.000003337,
+                                                    "operator_rows_scanned": 0,
+                                                    "cumulative_rows_scanned": 0,
+                                                    "operator_cardinality": 1,
+                                                    "operator_type": "PROJECTION",
+                                                    "cumulative_cardinality": 10000004,
+                                                    "extra_info": {
+                                                        "Projections": [
+                                                            "CASE  WHEN ((#1 > 1)) THEN (error('More than one row returned by a subquery used as an expression - scalar subqueries can only return a single row.",
+                                                            "Use \"SET scalar_subquery_error_on_multiple_rows=false\" to revert to previous behavior of returning a random row.')) ELSE #0 END"
+                                                        ],
+                                                        "Estimated Cardinality": "1"
+                                                    },
+                                                    "cpu_time": 0.034422523,
+                                                    "children": [
+                                                        {
+                                                            "result_set_size": 24,
+                                                            "operator_timing": 0.000001769,
+                                                            "operator_rows_scanned": 0,
+                                                            "cumulative_rows_scanned": 0,
+                                                            "operator_cardinality": 1,
+                                                            "operator_type": "UNGROUPED_AGGREGATE",
+                                                            "cumulative_cardinality": 10000003,
+                                                            "extra_info": {
+                                                                "Aggregates": [
+                                                                    "\"first\"(#0)",
+                                                                    "count_star()"
+                                                                ]
+                                                            },
+                                                            "cpu_time": 0.034419186,
+                                                            "children": [
+                                                                {
+                                                                    "result_set_size": 16,
+                                                                    "operator_timing": 2.45e-7,
+                                                                    "operator_rows_scanned": 0,
+                                                                    "cumulative_rows_scanned": 0,
+                                                                    "operator_cardinality": 1,
+                                                                    "operator_type": "PROJECTION",
+                                                                    "cumulative_cardinality": 10000002,
+                                                                    "extra_info": {
+                                                                        "Projections": "#0",
+                                                                        "Estimated Cardinality": "1"
+                                                                    },
+                                                                    "cpu_time": 0.034417417,
+                                                                    "children": [
+                                                                        {
+                                                                            "result_set_size": 16,
+                                                                            "operator_timing": 0.007240915999999999,
+                                                                            "operator_rows_scanned": 0,
+                                                                            "cumulative_rows_scanned": 0,
+                                                                            "operator_cardinality": 1,
+                                                                            "operator_type": "UNGROUPED_AGGREGATE",
+                                                                            "cumulative_cardinality": 10000001,
+                                                                            "extra_info": {
+                                                                                "Aggregates": "max(#0)"
+                                                                            },
+                                                                            "cpu_time": 0.034417171999999996,
+                                                                            "children": [
+                                                                                {
+                                                                                    "result_set_size": 80000000,
+                                                                                    "operator_timing": 0.00030695000000000006,
+                                                                                    "operator_rows_scanned": 0,
+                                                                                    "cumulative_rows_scanned": 0,
+                                                                                    "operator_cardinality": 5000000,
+                                                                                    "operator_type": "PROJECTION",
+                                                                                    "cumulative_cardinality": 10000000,
+                                                                                    "extra_info": {
+                                                                                        "Projections": "total_revenue",
+                                                                                        "Estimated Cardinality": "15408800"
+                                                                                    },
+                                                                                    "cpu_time": 0.027176256,
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "result_set_size": 120000000,
+                                                                                            "operator_timing": 0.026869306,
+                                                                                            "operator_rows_scanned": 0,
+                                                                                            "cumulative_rows_scanned": 0,
+                                                                                            "operator_cardinality": 5000000,
+                                                                                            "operator_type": "CTE_SCAN",
+                                                                                            "cumulative_cardinality": 5000000,
+                                                                                            "extra_info": {
+                                                                                                "CTE Index": "0",
+                                                                                                "Estimated Cardinality": "15408800"
+                                                                                            },
+                                                                                            "cpu_time": 0.026869306,
+                                                                                            "children": []
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

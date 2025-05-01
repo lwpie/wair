@@ -1,0 +1,123 @@
+{
+    "rows_returned": 1,
+    "latency": 1.115216107,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 4383232000,
+    "cumulative_cardinality": 199508229,
+    "extra_info": {},
+    "cpu_time": 22.851181655000026,
+    "blocked_thread_time": 0.0,
+    "query_name": "SELECT\n    100.00 * sum(CASE\n            WHEN p_type LIKE 'PROMO%' \n            THEN l_extendedprice * (1 - l_discount)\n            ELSE 0\n    END) / sum(l_extendedprice * (1 - l_discount)) AS promo_revenue\nFROM\n    read_parquet([\"s3://tpch10289--apne1-az1--x-s3/132.parquet\", \"s3://tpch10289--apne1-az1--x-s3/147.parquet\", \"s3://tpch10289--apne1-az1--x-s3/149.parquet\", \"s3://tpch10289--apne1-az1--x-s3/416.parquet\", \"s3://tpch10289--apne1-az1--x-s3/417.parquet\", \"s3://tpch10289--apne1-az1--x-s3/418.parquet\", \"s3://tpch10289--apne1-az1--x-s3/419.parquet\", \"s3://tpch10289--apne1-az1--x-s3/420.parquet\", \"s3://tpch10289--apne1-az1--x-s3/491.parquet\", \"s3://tpch10289--apne1-az1--x-s3/492.parquet\", \"s3://tpch10289--apne1-az1--x-s3/493.parquet\", \"s3://tpch10289--apne1-az1--x-s3/494.parquet\", \"s3://tpch10289--apne1-az1--x-s3/495.parquet\", \"s3://tpch10289--apne1-az1--x-s3/497.parquet\", \"s3://tpch10289--apne1-az1--x-s3/498.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1054.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1055.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1056.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1057.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1058.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1086.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1087.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1088.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1089.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1090.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1091.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1092.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1230.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1231.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1232.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1233.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1234.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1235.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1263.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1266.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1320.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1321.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1322.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1323.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1324.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1353.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1359.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1362.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1363.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1425.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1429.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1710.parquet\", \"s3://tpch10289--apne1-az1--x-s3/1711.parquet\"]),\n    'pool/part/*.parquet'\nWHERE\n    l_partkey = p_partkey\n    AND l_shipdate >= DATE '1992-01-01' + INTERVAL 18 MONTH\n    AND l_shipdate < DATE '1992-02-01' + INTERVAL 18 MONTH;",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 0.00002057,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 4383232000,
+            "operator_cardinality": 1,
+            "operator_type": "PROJECTION",
+            "cumulative_cardinality": 199508229,
+            "extra_info": {
+                "Projections": "promo_revenue",
+                "Estimated Cardinality": "1"
+            },
+            "cpu_time": 22.851181655000026,
+            "children": [
+                {
+                    "result_set_size": 32,
+                    "operator_timing": 0.11063908800000001,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 4383232000,
+                    "operator_cardinality": 1,
+                    "operator_type": "UNGROUPED_AGGREGATE",
+                    "cumulative_cardinality": 199508228,
+                    "extra_info": {
+                        "Aggregates": [
+                            "sum(#0)",
+                            "sum(#1)"
+                        ]
+                    },
+                    "cpu_time": 22.851161085000026,
+                    "children": [
+                        {
+                            "result_set_size": 537721360,
+                            "operator_timing": 0.8682456339999999,
+                            "operator_rows_scanned": 0,
+                            "cumulative_rows_scanned": 4383232000,
+                            "operator_cardinality": 33607585,
+                            "operator_type": "PROJECTION",
+                            "cumulative_cardinality": 199508227,
+                            "extra_info": {
+                                "Projections": [
+                                    "CASE  WHEN (prefix(p_type, 'PROMO')) THEN ((l_extendedprice * (1.00 - l_discount))) ELSE 0.0000 END",
+                                    "(l_extendedprice * (1.00 - l_discount))"
+                                ],
+                                "Estimated Cardinality": "19600000"
+                            },
+                            "cpu_time": 22.740521997000027,
+                            "children": [
+                                {
+                                    "result_set_size": 1613164080,
+                                    "operator_timing": 7.27779842400003,
+                                    "operator_rows_scanned": 0,
+                                    "cumulative_rows_scanned": 4383232000,
+                                    "operator_cardinality": 33607585,
+                                    "operator_type": "HASH_JOIN",
+                                    "cumulative_cardinality": 165900642,
+                                    "extra_info": {
+                                        "Join Type": "INNER",
+                                        "Conditions": "p_partkey = l_partkey",
+                                        "Estimated Cardinality": "19600000"
+                                    },
+                                    "cpu_time": 21.872276363000026,
+                                    "children": [
+                                        {
+                                            "result_set_size": 2351999856,
+                                            "operator_timing": 2.7138383229999996,
+                                            "operator_rows_scanned": 3136000000,
+                                            "cumulative_rows_scanned": 3136000000,
+                                            "operator_cardinality": 97999994,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 97999994,
+                                            "extra_info": {
+                                                "Function": "PARQUET_SCAN",
+                                                "Projections": [
+                                                    "p_partkey",
+                                                    "p_type"
+                                                ],
+                                                "Estimated Cardinality": "98000000"
+                                            },
+                                            "cpu_time": 2.7138383229999996,
+                                            "children": []
+                                        },
+                                        {
+                                            "result_set_size": 823033512,
+                                            "operator_timing": 11.880639615999996,
+                                            "operator_rows_scanned": 1247232000,
+                                            "cumulative_rows_scanned": 1247232000,
+                                            "operator_cardinality": 34293063,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 34293063,
+                                            "extra_info": {
+                                                "Function": "READ_PARQUET",
+                                                "Projections": [
+                                                    "l_partkey",
+                                                    "l_extendedprice",
+                                                    "l_discount"
+                                                ],
+                                                "Filters": "l_shipdate>='1993-07-01'::DATE AND l_shipdate<'1993-08-01'::DATE AND l_shipdate IS NOT NULL",
+                                                "Estimated Cardinality": "7795200"
+                                            },
+                                            "cpu_time": 11.880639615999996,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

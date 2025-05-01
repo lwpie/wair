@@ -1,0 +1,74 @@
+{
+    "rows_returned": 1,
+    "latency": 8.295719804,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 949248000,
+    "cumulative_cardinality": 59280001,
+    "extra_info": {},
+    "cpu_time": 56.114446493000024,
+    "blocked_thread_time": 0.0,
+    "query_name": "COPY (FROM read_parquet(['s3://tpch10289--apne1-az1--x-s3/1066.parquet','s3://tpch10289--apne1-az1--x-s3/1070.parquet','s3://tpch10289--apne1-az1--x-s3/1121.parquet','s3://tpch10289--apne1-az1--x-s3/1122.parquet','s3://tpch10289--apne1-az1--x-s3/1123.parquet','s3://tpch10289--apne1-az1--x-s3/1207.parquet','s3://tpch10289--apne1-az1--x-s3/1265.parquet','s3://tpch10289--apne1-az1--x-s3/1266.parquet','s3://tpch10289--apne1-az1--x-s3/1300.parquet','s3://tpch10289--apne1-az1--x-s3/1304.parquet','s3://tpch10289--apne1-az1--x-s3/1361.parquet','s3://tpch10289--apne1-az1--x-s3/1362.parquet','s3://tpch10289--apne1-az1--x-s3/1363.parquet','s3://tpch10289--apne1-az1--x-s3/1445.parquet','s3://tpch10289--apne1-az1--x-s3/1446.parquet','s3://tpch10289--apne1-az1--x-s3/146.parquet','s3://tpch10289--apne1-az1--x-s3/147.parquet','s3://tpch10289--apne1-az1--x-s3/149.parquet','s3://tpch10289--apne1-az1--x-s3/156.parquet','s3://tpch10289--apne1-az1--x-s3/1726.parquet','s3://tpch10289--apne1-az1--x-s3/1727.parquet','s3://tpch10289--apne1-az1--x-s3/1728.parquet','s3://tpch10289--apne1-az1--x-s3/1729.parquet','s3://tpch10289--apne1-az1--x-s3/1774.parquet','s3://tpch10289--apne1-az1--x-s3/237.parquet','s3://tpch10289--apne1-az1--x-s3/238.parquet','s3://tpch10289--apne1-az1--x-s3/239.parquet','s3://tpch10289--apne1-az1--x-s3/384.parquet','s3://tpch10289--apne1-az1--x-s3/390.parquet','s3://tpch10289--apne1-az1--x-s3/454.parquet','s3://tpch10289--apne1-az1--x-s3/460.parquet','s3://tpch10289--apne1-az1--x-s3/528.parquet','s3://tpch10289--apne1-az1--x-s3/529.parquet','s3://tpch10289--apne1-az1--x-s3/654.parquet','s3://tpch10289--apne1-az1--x-s3/655.parquet','s3://tpch10289--apne1-az1--x-s3/656.parquet']) ORDER BY l_shipdate) TO 's3://tpch10289--apne1-az1--x-s3/tmp' (FORMAT 'parquet');",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 5.031698453999999,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 949248000,
+            "operator_cardinality": 1,
+            "operator_type": "BATCH_COPY_TO_FILE",
+            "cumulative_cardinality": 59280001,
+            "extra_info": {},
+            "cpu_time": 56.114446493000024,
+            "children": [
+                {
+                    "result_set_size": 4623840000,
+                    "operator_timing": 25.967611397000027,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 949248000,
+                    "operator_cardinality": 29640000,
+                    "operator_type": "ORDER_BY",
+                    "cumulative_cardinality": 59280000,
+                    "extra_info": {
+                        "Order By": "read_parquet.l_shipdate ASC"
+                    },
+                    "cpu_time": 51.08274803900002,
+                    "children": [
+                        {
+                            "result_set_size": 4623840000,
+                            "operator_timing": 25.115136641999992,
+                            "operator_rows_scanned": 949248000,
+                            "cumulative_rows_scanned": 949248000,
+                            "operator_cardinality": 29640000,
+                            "operator_type": "TABLE_SCAN",
+                            "cumulative_cardinality": 29640000,
+                            "extra_info": {
+                                "Function": "READ_PARQUET",
+                                "Projections": [
+                                    "l_orderkey",
+                                    "l_partkey",
+                                    "l_suppkey",
+                                    "l_linenumber",
+                                    "l_quantity",
+                                    "l_extendedprice",
+                                    "l_discount",
+                                    "l_tax",
+                                    "l_returnflag",
+                                    "l_linestatus",
+                                    "l_shipdate",
+                                    "l_commitdate",
+                                    "l_receiptdate",
+                                    "l_shipinstruct",
+                                    "l_shipmode",
+                                    "l_comment"
+                                ],
+                                "Estimated Cardinality": "29664000"
+                            },
+                            "cpu_time": 25.115136641999992,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

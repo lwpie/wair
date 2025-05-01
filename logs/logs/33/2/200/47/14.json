@@ -1,0 +1,123 @@
+{
+    "rows_returned": 1,
+    "latency": 0.855922288,
+    "result_set_size": 8,
+    "cumulative_rows_scanned": 3904512000,
+    "cumulative_cardinality": 171489514,
+    "extra_info": {},
+    "cpu_time": 17.91876923400001,
+    "blocked_thread_time": 0.0,
+    "query_name": "SELECT\n    100.00 * sum(CASE\n            WHEN p_type LIKE 'PROMO%' \n            THEN l_extendedprice * (1 - l_discount)\n            ELSE 0\n    END) / sum(l_extendedprice * (1 - l_discount)) AS promo_revenue\nFROM\n    read_parquet([\"s3://tpch31355--apne1-az1--x-s3/249.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1057.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1058.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1059.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1060.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1062.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1063.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1066.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1067.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1068.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1069.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1070.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1071.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1072.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1073.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1074.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1075.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1076.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1077.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1078.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1079.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1080.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1081.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1083.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1084.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1085.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1086.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1087.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1089.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1090.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1094.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1096.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1097.parquet\", \"s3://tpch31355--apne1-az1--x-s3/1359.parquet\"]),\n    'pool/part/*.parquet'\nWHERE\n    l_partkey = p_partkey\n    AND l_shipdate >= DATE '1992-01-01' + INTERVAL 14 MONTH\n    AND l_shipdate < DATE '1992-02-01' + INTERVAL 14 MONTH;",
+    "children": [
+        {
+            "result_set_size": 8,
+            "operator_timing": 0.000020001,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 3904512000,
+            "operator_cardinality": 1,
+            "operator_type": "PROJECTION",
+            "cumulative_cardinality": 171489514,
+            "extra_info": {
+                "Projections": "promo_revenue",
+                "Estimated Cardinality": "1"
+            },
+            "cpu_time": 17.91876923400001,
+            "children": [
+                {
+                    "result_set_size": 32,
+                    "operator_timing": 0.08432436399999998,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 3904512000,
+                    "operator_cardinality": 1,
+                    "operator_type": "UNGROUPED_AGGREGATE",
+                    "cumulative_cardinality": 171489513,
+                    "extra_info": {
+                        "Aggregates": [
+                            "sum(#0)",
+                            "sum(#1)"
+                        ]
+                    },
+                    "cpu_time": 17.91874923300001,
+                    "children": [
+                        {
+                            "result_set_size": 404661632,
+                            "operator_timing": 0.6580440410000002,
+                            "operator_rows_scanned": 0,
+                            "cumulative_rows_scanned": 3904512000,
+                            "operator_cardinality": 25291352,
+                            "operator_type": "PROJECTION",
+                            "cumulative_cardinality": 171489512,
+                            "extra_info": {
+                                "Projections": [
+                                    "CASE  WHEN (prefix(p_type, 'PROMO')) THEN ((l_extendedprice * (1.00 - l_discount))) ELSE 0.0000 END",
+                                    "(l_extendedprice * (1.00 - l_discount))"
+                                ],
+                                "Estimated Cardinality": "18800000"
+                            },
+                            "cpu_time": 17.83442486900001,
+                            "children": [
+                                {
+                                    "result_set_size": 1213984896,
+                                    "operator_timing": 6.783740221000013,
+                                    "operator_rows_scanned": 0,
+                                    "cumulative_rows_scanned": 3904512000,
+                                    "operator_cardinality": 25291352,
+                                    "operator_type": "HASH_JOIN",
+                                    "cumulative_cardinality": 146198160,
+                                    "extra_info": {
+                                        "Join Type": "INNER",
+                                        "Conditions": "p_partkey = l_partkey",
+                                        "Estimated Cardinality": "18800000"
+                                    },
+                                    "cpu_time": 17.17638082800001,
+                                    "children": [
+                                        {
+                                            "result_set_size": 2255999976,
+                                            "operator_timing": 2.554223638,
+                                            "operator_rows_scanned": 3008000000,
+                                            "cumulative_rows_scanned": 3008000000,
+                                            "operator_cardinality": 93999999,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 93999999,
+                                            "extra_info": {
+                                                "Function": "PARQUET_SCAN",
+                                                "Projections": [
+                                                    "p_partkey",
+                                                    "p_type"
+                                                ],
+                                                "Estimated Cardinality": "94000000"
+                                            },
+                                            "cpu_time": 2.554223638,
+                                            "children": []
+                                        },
+                                        {
+                                            "result_set_size": 645763416,
+                                            "operator_timing": 7.838416968999998,
+                                            "operator_rows_scanned": 896512000,
+                                            "cumulative_rows_scanned": 896512000,
+                                            "operator_cardinality": 26906809,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 26906809,
+                                            "extra_info": {
+                                                "Function": "READ_PARQUET",
+                                                "Projections": [
+                                                    "l_partkey",
+                                                    "l_extendedprice",
+                                                    "l_discount"
+                                                ],
+                                                "Filters": "l_shipdate>='1993-03-01'::DATE AND l_shipdate<'1993-04-01'::DATE AND l_shipdate IS NOT NULL",
+                                                "Estimated Cardinality": "5603200"
+                                            },
+                                            "cpu_time": 7.838416968999998,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
