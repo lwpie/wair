@@ -9,7 +9,7 @@ from glob import glob
 import duckdb
 
 COL = 'l_shipdate'
-S3_PREFIX = os.environ['S3_BUCKET']
+S3_PREFIX = os.environ.get('S3_BUCKET')
 
 SCHEMA = {row[0]: row[1] for row in duckdb.sql(
     "DESCRIBE 'pool/lineitem/0.parquet';").fetchall()}
@@ -75,17 +75,17 @@ def parse(path):
     filename = os.path.join(path, 'logs.txt')
     with open(filename, encoding='utf-8') as f:
         data = f.read()
-    chunks = data.split(
-        'nr/1.sql\nnr/3.sql\nnr/6.sql\nnr/7.sql\nnr/12.sql\nnr/14.sql\nnr/15.sql\nnr/20.sql')[1:-1]
-    assert len(chunks) == 20
+    chunks = data.split('nr/20.sql')[1: -1]
+    assert len(chunks) == 25
 
     hits = list()
     for chunk in chunks:
+        chunk = chunk.split('nr/1.sql')[0]
         lines = chunk.strip().splitlines()
-        if len(lines) < 2:
+        if len(lines) < 3:
             hits.append(0)
         else:
-            hits.append(int(chunk.strip().splitlines()[0]))
+            hits.append(int(chunk.strip().splitlines()[1]))
 
     return hits
 

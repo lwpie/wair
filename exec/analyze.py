@@ -26,10 +26,10 @@ for path in tqdm(sorted(filter(os.path.isdir, glob(os.path.join(base, '*'))), ke
     r_io_size = list()
     for stats_file in glob(os.path.join(path, '*.json')):
         nr = os.path.splitext(os.path.basename(stats_file))[0]
-        _cpu_time, _io_time = stats(stats_file)
+        _cpu_time, _io_time, _, _ = stats(stats_file)
 
         fs_file = stats_file.removesuffix('.json') + '.txt'
-        gets, puts = fs(fs_file)
+        (gets, puts), _ = fs(fs_file)
 
         cpu_time.append(_cpu_time)
         io_time.append(_io_time)
